@@ -14,7 +14,7 @@ tabela hdoc_001 - Ramo de atividade                         ** Esta planilha est
 tabela hdoc_001 - Local de compra                           ** Esta planilha esta no formato de lista a nivel de exemplo. Será digitado pelo número de linhas que tem. **
 tabela cpag_040 - Tipo de titulo                            ** Esta planilha esta no formato de lista a nivel de exemplo. Será digitado pelo número de linhas que tem. **
 tabela crec_010 - Posicao de titulos                        ** Esta planilha esta no formato de lista a nivel de exemplo. Será digitado pelo número de linhas que tem. **
-tabela basi_105 - Serie de Cor                              ** Esta planilha esta no formato de lista a nivel de exemplo. Será digitado pelo número de linhas que tem. **
+# tabela basi_105 - Serie de Cor                              ** Esta planilha esta no formato de lista a nivel de exemplo. Será digitado pelo número de linhas que tem. **
 
 
 
