@@ -1,5 +1,5 @@
 # tabela basi_160 - Cidades                                   ** Esta planilha se encontra no formato de lista, pois a mesma já esta carregada no Systextil **
-tabela basi_030 - Grupos de produtos                        ** PARAMETOS DIFEREM DO PADRAO DAS OUTRAS TABELAS **
+# (falta de dados ) tabela basi_030 - Grupos de produtos                        ** PARAMETOS DIFEREM DO PADRAO DAS OUTRAS TABELAS **
 tabela basi_020 - Subgrupos - Grupos de produtos            ** PARAMETOS DIFEREM DO PADRAO DAS OUTRAS TABELAS **
 # tabela basi_010 - Cor                                       ** PARAMETOS DIFEREM DO PADRAO DAS OUTRAS TABELAS **
 tabela estq_005 - Transacoes estoque                        ** Esta planilha esta no formato de lista a nivel de exemplo. A importação será feita através de uma segunda planilha que compreende os dados contábeis e fiscais das parametrizações **
