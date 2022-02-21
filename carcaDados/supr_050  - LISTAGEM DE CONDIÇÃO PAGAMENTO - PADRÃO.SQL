@@ -9,7 +9,7 @@ SELECT
   COND_PGTO_COMPRA, --integer 
   DESCR_COND_PGTO, --tex, 
   AVISTA, --Integer, 
-  STATUS_EXPORTACAO, --integer, 
+  STATUS_EXPORTACAO --integer
 FROM
    supr_050 
 
