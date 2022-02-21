@@ -1,0 +1,33 @@
+-- VERSÃO 1
+SELECT
+    TIPO_TITULO, -- integer,
+    DESCRICAO, -- text,
+    AT_INFORM_FIN, -- integer,
+    CONSIDERA_COBRAN, -- integer,
+    AGRUPAMENTO, -- integer,
+    CONTROLE_IRRF, -- integer,
+    HISTORICO_PADRAO, -- integer,
+    USA_COND_PGTO, -- text,
+    ENTRA_FLUXO_CAIXA, -- integer,
+    TIPO_NUMERACAO, -- integer,
+    ANALISA_CREDITO, -- integer,
+    CALC_VL_PRESENTE, -- integer
+FROM    
+    cpag_040
+
+-- VERSÃO 2 LISTAGEM TIPOS DE TITULOS - PADRÃO
+SELECT
+    TIPO_TITULO,
+    DESCRICAO, 
+    AT_INFORM_FIN, 
+    CONSIDERA_COBRAN,
+    AGRUPAMENTO, 
+    CONTROLE_IRRF, 
+    HISTORICO_PADRAO,
+    USA_COND_PGTO, 
+    ENTRA_FLUXO_CAIXA, 
+    TIPO_NUMERACAO, 
+    ANALISA_CREDITO, 
+    CALC_VL_PRESENTE
+FROM
+    cpag_040

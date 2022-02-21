@@ -1,0 +1,15 @@
+-- VERSÃO 1
+SELECT
+    POSICAO_DUPLIC, -- integer
+    DESCRICAO, -- text
+    IGNORA_SCI, -- integer
+FROM
+    crec_010
+
+-- VERSAO 2 | LISTAGEM POSIÇÃO DE TITULOS - PADRÃO
+SELECT
+    POSICAO_DUPLIC, 
+    DESCRICAO,
+    IGNORA_SCI
+FROM
+    crec_010

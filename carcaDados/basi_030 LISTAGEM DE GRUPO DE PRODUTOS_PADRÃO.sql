@@ -201,8 +201,7 @@ SELECT
     COMPOSICAO_08_INGLES, --text
     COMPOSICAO_09_INGLES, --text
     COMPOSICAO_10_INGLES, --text
-FROM 
-    basi_030
+
 
 --versao 2  
 SELECT
