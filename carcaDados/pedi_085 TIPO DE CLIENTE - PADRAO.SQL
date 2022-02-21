@@ -1,0 +1,26 @@
+-- versao 1
+SELECT
+    TIPO_CLIENTE, --integer
+    DESCR_TIPO_CLIEN, --text
+    TIPO_TRATAMENTO, --integer
+    TIPO_COMISSAO_LOJA, --integer
+    GRUPO_PROMOCAO_LOJA, --integer
+    SERIE_DEFAULT, --text
+    DISPONIVEL_NET, --integer
+    PRIORIDADE_SUGESTAO, --integer
+FROM
+    pedi_085
+
+
+-- versao 2 Tipo de cliente PADRAO
+SELECT
+    TIPO_CLIENTE, 
+    DESCR_TIPO_CLIEN, 
+    TIPO_TRATAMENTO, 
+    TIPO_COMISSAO_LOJA, 
+    GRUPO_PROMOCAO_LOJA, 
+    SERIE_DEFAULT AS SERIE, 
+    DISPONIVEL_NET, 
+    PRIORIDADE_SUGESTAO
+FROM
+    pedi_085
