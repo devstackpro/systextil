@@ -1,4 +1,4 @@
--- versao 1
+-- VERSÃO 1
 SELECT
     TIPO_CLIENTE, --integer
     DESCR_TIPO_CLIEN, --text
@@ -12,7 +12,7 @@ FROM
     pedi_085
 
 
--- versao 2 Tipo de cliente PADRAO
+-- VERSÃO 2 TIPO DE CLIENTE - PADRAO
 SELECT
     TIPO_CLIENTE, 
     DESCR_TIPO_CLIEN, 
