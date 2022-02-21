@@ -7,7 +7,7 @@ tabela basi_020 - Subgrupos - Grupos de produtos            ** PARAMETOS DIFEREM
 # tabela supr_130 - Tipo Forncedor                            ** Esta planilha esta no formato de lista a nivel de exemplo. Esta tabela ser um misto de carga de dados vinda diretamento do plano de contas com digitações manuais do usuário **
 # tabela pedi_085 - Tipo de cliente                           ** Esta planilha esta no formato de lista a nivel de exemplo. Será digitado pelo número de linhas que tem. **
 tabela hdoc_001 - MotExcCli                                 ** Esta planilha esta no formato de lista a nivel de exemplo. Será digitado pelo número de linhas que tem. **
-# tabela hdoc_001 - Conceito Cliente                          ** Esta planilha esta no formato de lista a nivel de exemplo. Será digitado pelo número de linhas que tem. **
+tabela hdoc_001 - Conceito Cliente                          ** Esta planilha esta no formato de lista a nivel de exemplo. Será digitado pelo número de linhas que tem. **
 tabela hdoc_001 - Porte cliente                             ** Esta planilha esta no formato de lista a nivel de exemplo. Será digitado pelo número de linhas que tem.**
 tabela hdoc_001 - Segmento mercado                          ** Esta planilha esta no formato de lista a nivel de exemplo. Será digitado pelo número de linhas que tem. **
 tabela hdoc_001 - Ramo de atividade                         ** Esta planilha esta no formato de lista a nivel de exemplo. Será digitado pelo número de linhas que tem. **
