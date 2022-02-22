@@ -18,7 +18,7 @@ SELECT
     PERCENT_PERDAS --type: VARCHAR2(7,3) | nullable: Y | Default: 0 | comments: Percentual de perdas do item | Pre Cadastro: | Obs:
     ESTAGIO --type: VARCHAR2(2) | nullable: Y | Default: 0 | comments: Estagio de producao onde o produto sera utilizado | Pre Cadastro: 7 FIACAO 4 URDIMENTO 10 CARREGAMENTO 15 TINGIMENTO 20 TECELAGEM 30 CHAMUSCADEIRA 35 LAVAGEM 40 RAMA 45 SANFOR 50 QUALIDADE 55 REVISÃO | Obs:
 
--- VERSÃO 1 | LISTAGEM PADRÃO
+-- VERSÃO 1 | LISTAGEM ESTRUTURA PRODUTOS
 SELECT
     NIVEL_ITEM, -- text
     GRUPO_ITEM, -- text
@@ -72,7 +72,7 @@ SELECT
 FROM
     basi_050    
 
--- VERSÃO 2 | LISTAGEM ESTRUTURA - PADRÃO
+-- VERSÃO 2 | LISTAGEM ESTRUTURA PRODUTOS - PADRÃO
 SELECT
     NIVEL_ITEM,
     GRUPO_ITEM,
