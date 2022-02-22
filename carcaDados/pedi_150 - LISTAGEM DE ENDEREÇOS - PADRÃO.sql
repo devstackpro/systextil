@@ -1,3 +1,5 @@
+-- VERSÃO 1 | CARGA DE DADOS
+
 SELECT
     CD_CLI_CGC_CLI9, --type: NUMBER(9) | nullable: N | Default: 0 | comments:| Pre Cadastro: Clientes  | Obs: É o CNPJ ou CPF do clie te. Para clientes sem CNPJ ou CPF
     CD_CLI_CGC_CLI4, --type: NUMBER(4) | nullable: N | Default: 0 | comments: | Pre Cadastro: Clientes  | Obs: É o CNPJ ou CPF do clie te. Para clientes sem CNPJ ou CPF
@@ -22,3 +24,69 @@ SELECT
     TRANSP_REDESPACHO2, --type: NUMBER(2) | nullable: Y | Default: '' | comments: | Pre Cadastro: Fornecedores | Obs:CNPJ da transportadora padrão de redespacho
     NUMERO_IMOVEL, --type: VARCHAR2(5) | nullable: Y | Default: '' | comments: | Pre Cadastro: | Obs: Número do imóvel
     COMPLEMENTO_ENDERECO, --type: VARCHAR2(20) | nullable: Y | Default: '' | comments: | Pre Cadastro: | Obs: Complemento do endereço
+
+
+-- VERSÃO 1 | LISTAGEM PADRÃO 
+SELECT
+    CD_CLI_CGC_CLI9, --integer
+    CD_CLI_CGC_CLI4, --integer
+    CD_CLI_CGC_CLI2, --integer
+    SEQ_ENDERECO, --integer
+    TIPO_ENDERECO, --integer
+    END_ENTR_COBR, --text
+    CGC_ENTR_COBR9, --integer
+    CGC_ENTR_COBR4, --integer
+    CGC_ENTR_COBR2, --integer
+    IE_ENTR_COBR, --text
+    CEP_ENTR_COBR, --integer
+    BAIRRO_ENTR_COBR, --text
+    CID_ENTR_COBR, --integer
+    FONE_ENTR_COBR, --integer
+    GERA_NOTA_ENTREG, --integer
+    CIDADE_CIF, --integer
+    NOME_COMPLEMENTO, --text
+    FONE_COMPLEMENTO, --text
+    CEP_COMPLEMENTO, --text
+    TRANSP_REDESPACHO9, --integer
+    TRANSP_REDESPACHO4, --integer
+    TRANSP_REDESPACHO2, --integer
+    NUMERO_IMOVEL, --text
+    COMPLEMENTO_ENDERECO, --text
+    FLAG_EXPORTACAO_LOJA, --integer
+    TIPO_ENTREGA, --text
+    DESTINATARIO_ENTR_COBR, --text
+FROM
+    pedi_150 
+
+-- VERSÃO 2 | LISTAGEM PADRÃO
+
+SELECT
+    CD_CLI_CGC_CLI9, 
+    CD_CLI_CGC_CLI4, 
+    CD_CLI_CGC_CLI2, 
+    SEQ_ENDERECO, 
+    TIPO_ENDERECO, 
+    END_ENTR_COBR,
+    CGC_ENTR_COBR9, 
+    CGC_ENTR_COBR4, 
+    CGC_ENTR_COBR2, 
+    IE_ENTR_COBR,
+    CEP_ENTR_COBR, 
+    BAIRRO_ENTR_COBR,
+    CID_ENTR_COBR, 
+    FONE_ENTR_COBR, 
+    GERA_NOTA_ENTREG, 
+    CIDADE_CIF, 
+    NOME_COMPLEMENTO,
+    FONE_COMPLEMENTO,
+    CEP_COMPLEMENTO,
+    TRANSP_REDESPACHO9, 
+    TRANSP_REDESPACHO4, 
+    TRANSP_REDESPACHO2, 
+    NUMERO_IMOVEL,
+    COMPLEMENTO_ENDERECO,
+    FLAG_EXPORTACAO_LOJA, 
+    TIPO_ENTREGA,
+    DESTINATARIO_ENTR_COBR
+FROM
+    pedi_150 
