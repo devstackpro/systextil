@@ -20,3 +20,77 @@ SELECT
     VALOR_PAGO_MOEDA, --type: NUMBER(15,2) | nullable: Y | Default: 0.00 | comments: | Pre Cadastro: | Obs: Valor total pago na moeda do título É o valor liquido recebido do cliente, considerando os juros pagos e os descontos auferidos
     VLR_DESCONTO_MOEDA, --type: NUMBER(15,2) | nullable: Y | Default: 0.00 | comments: | Pre Cadastro: | Obs: Valor dos juros cobrados na moeda do título
     VLR_JUROS_MOEDA, --type: NUMBER(15,2) | nullable: Y | Default: 0.00 | comments: | Pre Cadastro: | Obs: Valor do desconto na moeda do título
+
+
+-- VERSÃO 1 | LISTAGEM PADRÃO 
+
+SELECT
+    NR_TITUL_CODEMPR, --integer
+    NR_TITUL_CLI_DUP_CGC_CLI9, --integer
+    NR_TITUL_CLI_DUP_CGC_CLI4, --integer
+    NR_TITUL_CLI_DUP_CGC_CLI2, --integer
+    NR_TITUL_COD_TIT, --integer
+    NR_TITUL_NUM_DUP, --integer
+    NR_TITUL_SEQ_DUP, --integer
+    SEQ_PAGAMENTO, --integer
+    DATA_PAGAMENTO, --datetime
+    VALOR_PAGO, --float
+    HISTORICO_PGTO, --integer
+    NUMERO_DOCUMENTO, --integer
+    VALOR_JUROS, --float
+    VALOR_DESCONTOS, --float
+    PORTADOR, --integer
+    CONTA_CORRENTE, --integer
+    DATA_CREDITO, --datetime
+    DOCTO_PAGTO, --integer
+    NUM_CONTABIL, --integer
+    COMISSAO_LANCADA, --integer
+    ALINEA, --integer
+    PAGO_ADIANTAMENTO, --integer
+    NR_CONTRATO_ACC, --text
+    PROCESSO_EXPORT_ACC, --integer
+    VALOR_PAGO_MOEDA, --float
+    EXECUTA_TRIGGER, --integer
+    VLR_DESCONTO_MOEDA, --float
+    VLR_JUROS_MOEDA, --float
+    NR_MTV_ABATIMENTO, --integer
+    FLAG_DEV_CONSIGNADO, --integer
+FROM
+    fatu_075 
+
+
+-- VERSÃO 2 | LISTAGEM PADRÃO
+
+SELECT
+    NR_TITUL_CODEMPR, 
+    NR_TITUL_CLI_DUP_CGC_CLI9, 
+    NR_TITUL_CLI_DUP_CGC_CLI4, 
+    NR_TITUL_CLI_DUP_CGC_CLI2, 
+    NR_TITUL_COD_TIT, 
+    NR_TITUL_NUM_DUP, 
+    NR_TITUL_SEQ_DUP, 
+    SEQ_PAGAMENTO, 
+    DATA_PAGAMENTO, 
+    VALOR_PAGO, 
+    HISTORICO_PGTO, 
+    NUMERO_DOCUMENTO, 
+    VALOR_JUROS, 
+    VALOR_DESCONTOS, 
+    PORTADOR, 
+    CONTA_CORRENTE, 
+    DATA_CREDITO, 
+    DOCTO_PAGTO, 
+    NUM_CONTABIL, 
+    COMISSAO_LANCADA, 
+    ALINEA, 
+    PAGO_ADIANTAMENTO, 
+    NR_CONTRATO_ACC, 
+    PROCESSO_EXPORT_ACC, 
+    VALOR_PAGO_MOEDA, 
+    EXECUTA_TRIGGER, 
+    VLR_DESCONTO_MOEDA, 
+    VLR_JUROS_MOEDA, 
+    NR_MTV_ABATIMENTO, 
+    FLAG_DEV_CONSIGNADO
+FROM
+    fatu_075 
