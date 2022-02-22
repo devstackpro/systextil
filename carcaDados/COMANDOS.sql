@@ -1,0 +1,18 @@
+-- VERSÃO 1 | CARGA DE DADOS
+
+
+-- VERSÃO 1 | LISTAGEM PADRÃO 
+
+SELECT
+
+FROM
+
+
+-- VERSÃO 2 | LISTAGEM PADRÃO
+
+SELECT
+
+FROM
+
+dqgh3ffrdg
+
