@@ -1,3 +1,4 @@
+-- VERSÃO 1 | CARGA DE DADOS
 SELECT
     DUPL_FOR_NRDUPPAG --type: NUMBER(9) | nullable: N | Default: 0 | comments: . | Pre Cadastro: Contas a Pagar | Obs: Número do titulo Conforme acertado entre as partes, este número será o ID do protheus
     DUPL_FOR_NO_PARC --type: VARCHAR2(3) | nullable: N | Default: | comments: . | Pre Cadastro: | Obs: Parcela do título. Conforme acordado entre as partes, a parcela será sempre fixo "1"
@@ -26,3 +27,103 @@ SELECT
     VLR_DESCONTOS_MOEDA --type: NUMBER(15,2) | nullable: Y | Default: 0.00 | comments: | Pre Cadastro: | Obs: Valor do desconto obtido na moeda do título
     TIPO_PAGAMENTO --type: NUMBER(1) | nullable: Y | Default:  0 | comments: | Pre Cadastro: Tipo pagamento | Obs: Indicador do tipo de pagamento. Se não tiver, enviar fixo zero.
     
+
+-- VERSÃO 1 | LISTAGEM PADRÃO 
+SELECT
+    DUPL_FOR_NRDUPPAG, --integer
+    DUPL_FOR_NO_PARC, --text
+    DUPL_FOR_FOR_CLI9, --integer
+    DUPL_FOR_FOR_CLI4, --integer
+    DUPL_FOR_FOR_CLI2, --integer
+    DUPL_FOR_TIPO_TIT, --integer
+    SEQUENCIA_PAGTO, --integer
+    DATA_PAGAMENTO, --datetime
+    NUMERO_DOCUMENTO, --integer
+    CODIGO_HISTORICO, --integer
+    VALOR_JUROS, --float
+    VALOR_DESCONTOS, --float
+    VALOR_PAGO, --float
+    VALOR_ABATIMENTO, --float
+    VALOR_ABATIDO, --float
+    CD_PORTA_COD_PORT, --integer
+    CD_PORTA_NR_CONTA, --integer
+    NUMERO_LOTE, --integer
+    NF_ORIGEM_ABAT, --integer
+    SER_ORIGEM_ABAT, --text
+    CODIGO_DEPTO, --integer
+    CODIGO_TRANSACAO, --integer
+    DATA_BAIXA, --datetime
+    PAGO_ADIANTAM, --integer
+    NUM_CONTABIL, --integer
+    DATA_PG_REAL, --datetime
+    NUMERO_ADIANTAM, --integer
+    TRANSACAO, --integer
+    EXPORTA_PAGAMENTO, --integer
+    VALOR_PAGO_MOEDA, --float
+    EXECUTA_TRIGGER, --integer
+    VLR_JUROS_MOEDA, --float
+    VLR_DESCONTOS_MOEDA, --float
+    VLR_ABATIDO_MOEDA, --float
+    TIPO_PAGAMENTO, --integer
+    MODALIDADE, --integer
+    CODIGO_BARRAS, --text
+    CODIGO_LANCAMENTO, --integer
+    SEU_NUMERO, --text
+    NUMERO_PAGAMENTO, --text
+    TIPO_MOVIMENTO, --integer
+    VLR_MULTA, --float
+    VLR_JUROS, --float
+    VLR_DESP_CARTORIO, --float
+    VLR_OUTRAS_DESP, --float
+FROM 
+    cpag_015 
+
+-- VERSÃO 2 | LISTAGEM PADRÃO
+SELECT
+    DUPL_FOR_NRDUPPAG, 
+    DUPL_FOR_NO_PARC, 
+    DUPL_FOR_FOR_CLI9, 
+    DUPL_FOR_FOR_CLI4, 
+    DUPL_FOR_FOR_CLI2, 
+    DUPL_FOR_TIPO_TIT, 
+    SEQUENCIA_PAGTO, 
+    DATA_PAGAMENTO, 
+    NUMERO_DOCUMENTO, 
+    CODIGO_HISTORICO, 
+    VALOR_JUROS, 
+    VALOR_DESCONTOS, 
+    VALOR_PAGO, 
+    VALOR_ABATIMENTO, 
+    VALOR_ABATIDO, 
+    CD_PORTA_COD_PORT, 
+    CD_PORTA_NR_CONTA, 
+    NUMERO_LOTE, 
+    NF_ORIGEM_ABAT, 
+    SER_ORIGEM_ABAT, 
+    CODIGO_DEPTO, 
+    CODIGO_TRANSACAO, 
+    DATA_BAIXA, 
+    PAGO_ADIANTAM, 
+    NUM_CONTABIL, 
+    DATA_PG_REAL, 
+    NUMERO_ADIANTAM, 
+    TRANSACAO, 
+    EXPORTA_PAGAMENTO, 
+    VALOR_PAGO_MOEDA, 
+    EXECUTA_TRIGGER, 
+    VLR_JUROS_MOEDA, 
+    VLR_DESCONTOS_MOEDA, 
+    VLR_ABATIDO_MOEDA, 
+    TIPO_PAGAMENTO, 
+    MODALIDADE, 
+    CODIGO_BARRAS, 
+    CODIGO_LANCAMENTO, 
+    SEU_NUMERO, 
+    NUMERO_PAGAMENTO, 
+    TIPO_MOVIMENTO, 
+    VLR_MULTA, 
+    VLR_JUROS, 
+    VLR_DESP_CARTORIO, 
+    VLR_OUTRAS_DESP
+FROM 
+    cpag_015 
