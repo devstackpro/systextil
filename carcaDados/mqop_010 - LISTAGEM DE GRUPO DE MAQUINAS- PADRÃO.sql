@@ -1,3 +1,4 @@
+-- VERSÃO 1 | CARGA DE DADOS
 SELECT
     GRUPO_MAQUINA --type: VARCHAR2(4) | nullable: N | Default: | comments: | Pre Cadastro: | Obs:
     NOME_GRUPO_MAQ --type: VARCHAR2(60) | nullable: Y | Default: | comments: | Pre Cadastro:| Obs:
@@ -13,3 +14,50 @@ SELECT
     PROGRAMACAO_AUTOMATICA --type: VARCHAR2(1) | nullable: Y | Default: N' | comments: | Pre Cadastro:| Obs: (S) - Para considerar na programação automática de beneficiamento de fios ou (N) - Para não considerar.
     PERC_VARIACAO --type: NUMBER(5,2) | nullable: Y | Default: 0 | comments: | Pre Cadastro:| Obs: Percentual de tolerencia para quantidade produzida maior que a quantidade programada
     CODIGO_ESTAGIO --type: NUMBER(2) | nullable: Y | Default: 0 | comments: | Pre Cadastro: Estagios | Obs: CODIGO_ESTAGIO        DESCRICAO 0        . 7        FIACAO 4        URDIMENTO 10        PREPARACAO 15        TINGIMENTO 20        TECELAGEM 30        CHAMUSCADEIRA 35        LAVAGEM 40        RAMA 45        SANFOR 50        QUALIDADE 55        REVISÃO
+
+
+-- VERSÃO 1 | LISTAGEM PADRÃO 
+SELECT
+    GRUPO_MAQUINA, --text
+    NOME_GRUPO_MAQ, --text
+    UN_MED_CAPACID, --text
+    MAN_AUTOMATICA, --integer
+    TEM_EFICIENCIA, --integer
+    MAQUINA_CRITICA, --integer
+    TIPO_CARGA, --integer
+    QTDE_MAQ_SIMUL, --integer
+    TIPO_OPERACAO, --integer
+    PERMITE_ORDEM_VARIAS_MAQUINAS, --text
+    PERMITE_IGNORAR_APONTAMENTOS, --text
+    PROGRAMACAO_AUTOMATICA, --text
+    TIPO_MAQUINA, --text
+    PRIORIDADE, --integer
+    PERC_VARIACAO, --float
+    CODIGO_ESTAGIO, --integer
+FROM
+    mqop_010
+
+
+-- VERSÃO 2 | LISTAGEM PADRÃO
+
+SELECT 
+    GRUPO_MAQUINA, 
+    NOME_GRUPO_MAQ, 
+    UN_MED_CAPACID, 
+    MAN_AUTOMATICA,
+    TEM_EFICIENCIA,
+    MAQUINA_CRITICA,
+    TIPO_CARGA,
+    QTDE_MAQ_SIMUL,
+    TIPO_OPERACAO,
+    PERMITE_ORDEM_VARIAS_MAQUINAS, 
+    PERMITE_IGNORAR_APONTAMENTOS, 
+    PROGRAMACAO_AUTOMATICA, 
+    TIPO_MAQUINA, 
+    PRIORIDADE,
+    PERC_VARIACAO, 
+    CODIGO_ESTAGIO
+FROM
+    mqop_010
+
+
