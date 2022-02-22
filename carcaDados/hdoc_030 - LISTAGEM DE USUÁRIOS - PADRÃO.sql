@@ -1,3 +1,5 @@
+-- VERSÃO 1 | CARGA DE DADOS
+
 SELECT
     USUARIO --type: VARCHAR2(15) | nullable: | Default: ' | comments: | Pre Cadastro: | Obs:
     EMPRESA --type: NUMBER(3) | nullable: | Default: 0 | comments: | Pre Cadastro: | Obs:
@@ -79,3 +81,17 @@ SELECT
     COMPRA_EMERGENCIAL --type: VARCHAR2(1) | nullable: Y | Default: N' | comments: | Pre Cadastro: | Obs:
     IMPRIME_PESO_ROLO --type: NUMBER(1) | nullable: Y | Default: 1 | comments: | Pre Cadastro: | Obs: Parâmetro imprime ou não o peso do rolo na etiqueta de rolo
     IMPRIME_PESO_ROLO --type: NUMBER(1) | nullable: Y | Default: 1 | comments: | Pre Cadastro: | Obs: Parâmetro imprime ou não o peso do rolo na etiqueta de rolo
+
+-- VERSÃO 1 | LISTAGEM PADRÃO 
+
+SELECT 
+
+FROM
+    hdoc_030 
+
+-- VERSÃO 2 | LISTAGEM PADRÃO
+
+SELECT 
+
+FROM
+    hdoc_030 
