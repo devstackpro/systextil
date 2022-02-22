@@ -1,3 +1,5 @@
+-- VERSÃO 1 | CARGA DE DADOS
+
 SELECT
     COND_PGT_CLIENTE --type: NUMBER(3) | nullable: N | Default: 0 | comments: | Pre Cadastro: | Obs: Codigo da condição pagto
     DESCR_PG_CLIENTE --type: VARCHAR2(30) | nullable: Y | Default: | comments: | Pre Cadastro: | Obs: Descrição
@@ -18,3 +20,62 @@ SELECT
     COD_FORMA_PAGTO --type: NUMBER(2) | nullable: Y | Default: 0 | comments: | Pre Cadastro: | Obs: Indica a forma de pagamento. Enviar fixo 0
     CONSIDERA_LIMITE_CREDITO --type: VARCHAR2(1) | nullable: Y | Default: | comments: (S) Sim (N) Não  | Pre Cadastro: | Obs: Considera no limite de credito
     GERA_COND_DANFE --type: VARCHAR2(1) | nullable: Y | Default: | comments: | Pre Cadastro: | Obs: Controle interno Enviar fixo "S"
+
+-- VERSÃO 1 | LISTAGEM PADRÃO 
+
+SELECT
+    COND_PGT_CLIENTE, --integer
+    DESCR_PG_CLIENTE, --text
+    PERC_DESC_DUPLIC, --float
+    PERC_JURO_DUPLIC, --float
+    PERC_BONI_DUPLIC, --float
+    VALOR_MINIMO, --float
+    BLOQUEIA_PEDIDO, --integer
+    PERC_DESC_PEDIDO, --float
+    DIVISAO_PRODUTO, --text
+    SIT_CONDICAO, --integer
+    CART_COND_PGTO_COBR, --integer
+    PEDIDOS_VIA_WEB, --integer
+    INFORMA_DATA_VALOR, --integer
+    TIPO_FATURA, --integer
+    AVISTA, --integer
+    PRAZO_MEDIO, --float
+    CONDICAO_SUPPLIERCARD, --text
+    IND_GERA_BOLETO, --text
+    COD_FORMA_PAGTO, --integer
+    CONSIDERA_LIMITE_CREDITO, --text
+    GERA_COND_DANFE, --text
+FROM
+    pedi_070 
+
+-- VERSÃO 2 | LISTAGEM PADRÃO
+
+SELECT
+    COND_PGT_CLIENTE, 
+    DESCR_PG_CLIENTE, 
+    PERC_DESC_DUPLIC, 
+    PERC_JURO_DUPLIC, 
+    PERC_BONI_DUPLIC, 
+    VALOR_MINIMO, 
+    BLOQUEIA_PEDIDO, 
+    PERC_DESC_PEDIDO, 
+    DIVISAO_PRODUTO, 
+    SIT_CONDICAO, 
+    CART_COND_PGTO_COBR, 
+    PEDIDOS_VIA_WEB, 
+    INFORMA_DATA_VALOR, 
+    TIPO_FATURA, 
+    AVISTA, 
+    PRAZO_MEDIO, 
+    CONDICAO_SUPPLIERCARD, 
+    IND_GERA_BOLETO, 
+    COD_FORMA_PAGTO, 
+    CONSIDERA_LIMITE_CREDITO, 
+    GERA_COND_DANFE
+FROM
+    pedi_070 
+
+
+
+
+
