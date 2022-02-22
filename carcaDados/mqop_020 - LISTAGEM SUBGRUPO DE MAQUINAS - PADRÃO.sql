@@ -1,3 +1,4 @@
+-- VERSÃO 1 | CARGA DE DADOS
 SELECT  
    GRUPO_MAQUINA --type: VARCHAR2(4) | nullable: N | Default: | comments: | Pre Cadastro: Mqop_010 – grupo de maquinas | Obs:
    SUBGRUPO_MAQUINA --type: VARCHAR2(3) | nullable: N | Default: | comments: | Pre Cadastro: | Obs:
@@ -17,4 +18,7 @@ SELECT
    LARGURA_PADRAO_MAQ --type: VARCHAR(6) | nullable: Y | Default: 0 | comments: | Pre Cadastro: | Obs:
    ROTEIRO_OPCIONAL --type: VARCHAR(2) | nullable: Y | Default: 0 | comments: | Pre Cadastro: | Obs:
    
-   
+-- VERSÃO 1 | LISTAGEM SUBGRUPO DE MAQUINAS
+SELECT
+
+   -- OBSERVAÇÃO | NAO FOI POSSIVEL GERAR LISTAGEM
