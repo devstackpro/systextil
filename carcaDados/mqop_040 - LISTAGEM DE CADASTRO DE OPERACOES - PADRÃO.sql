@@ -1,3 +1,5 @@
+-- VERSÃO 1 | CARGA DE DADOS
+
 SELECT
     CODIGO_OPERACAO, --type: NUMBER(5) | nullable: N | Default: '' | comments: Codigo (sequencial) da operacao Entende-se como "operações" todas as atividades executadas sobre um material para transforma-lo de materia-prima ou semi-acabado, em acabado. Ex.: tecer, tingir, ramar, pregar, costurar... Com base nesse cadastramento serão formados os roteiros de  produção. É recomendável adotar uma sequência numérica para operações de um  mesmo estágio de produção, deixando vários números disponíveis para novas implantações. Ex.: Um cadastramento de operações executadas na fase de costura:  CÓD.    MÁQ.      DESCRIÇÃO -------------------------------------------------   1001    Reta    Juntar frente e costa    1002    Reta      Pregar etiqueta Assim sucessivamente, utilizando 1003, 1004...  para outras operações e máquinas referentes a costura. | Pre Cadastro: | Obs:
     GRUPO_MAQUINAS, --type: VARCHAR2(4) | nullable: y | Default: '' | comments: Codigo do grupo de maquinas em que a operacao e executada | Pre Cadastro: | Obs:  
@@ -17,8 +19,60 @@ SELECT
     CLASSIFICACAO_MAQ, --type: NUMBER(2) | nullable: y | Default: 0 | comments: 0 - Não informado 1 - Oper. de Alvejamento 2 - Oper. de Amaciamento 3 - Oper. de Tingimento | Pre Cadastro: | Obs:
     OBSERVACAO, --type: VARCHAR2(4000) | nullable: y | Default: '' | comments: Complemento de observação | Pre Cadastro: | Obs: 
 
+-- VERSÃO 1 | LISTAGEM PADRÃO 
 
+SELECT
+    CODIGO_OPERACAO, --integer
+    GRUPO_MAQUINAS, --text
+    NOME_OPERACAO, --text
+    TIPO_OPERACAO, --integer
+    PEDE_PRODUTO, --integer
+    SUB_MAQUINA, --text
+    CODIGO_CARGO, --integer
+    CLASSIFICACAO, --integer
+    OPERANDO, --integer
+    TEMPO_MAQUINA, --float
+    TEMPO_HOMEM, --float
+    OBSERVACAO, --text
+    CENTIMETROS_LINHA, --float
+    CODIGO_APARELHO, --text
+    CLASSIFICACAO_MAQ, --integer
+    CATEGORIA_PAGAMENTO, --text
+    ATALHO_ANEXO, --text
+    DESCR_OPERACAO, --text
+    REPLICA_TEMPO, --integer
+    COD_PARTE, --text
+    FAM_PARTE, --text
+    COD_OPERACAO_BASICA, --integer
+    CONTROLA_EFICIENCIA, --integer
+FROM
+    mqop_040 
 
+-- VERSÃO 2 | LISTAGEM PADRÃO
 
-
-
+SELECT
+    CODIGO_OPERACAO, 
+    GRUPO_MAQUINAS, 
+    NOME_OPERACAO, 
+    TIPO_OPERACAO, 
+    PEDE_PRODUTO, 
+    SUB_MAQUINA, 
+    CODIGO_CARGO, 
+    CLASSIFICACAO, 
+    OPERANDO, 
+    TEMPO_MAQUINA, 
+    TEMPO_HOMEM, 
+    OBSERVACAO, 
+    CENTIMETROS_LINHA, 
+    CODIGO_APARELHO, 
+    CLASSIFICACAO_MAQ, 
+    CATEGORIA_PAGAMENTO, 
+    ATALHO_ANEXO, 
+    DESCR_OPERACAO, 
+    REPLICA_TEMPO, 
+    COD_PARTE, 
+    FAM_PARTE, 
+    COD_OPERACAO_BASICA, 
+    CONTROLA_EFICIENCIA
+FROM
+    mqop_040 
