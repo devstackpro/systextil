@@ -1,3 +1,5 @@
+-- VERSÃO 1 | CARGA DE DADOS
+
 SELECT
     NATUR_OPERACAO, --type: NUMBER(3) | nullable: N| Default: 0 | comments: | Pre Cadastro: | Obs: Código interno da natureza de operação
     ESTADO_NATOPER, --type: VARCHAR2(2) | nullable: N | Default: 0 | comments: | Pre Cadastro: | Obs: Estado da Natureza de operação. Faz relacionamento com o Estado do cliente ou fornecedor
@@ -76,34 +78,199 @@ SELECT
     IND_NATUR_CUPOM_REF, --type: NUMBER(1) | nullable: Y | Default: 0 | comments: 0 - Indica natureza Não utilizada a cupom relacionado a NF-e (Normal) 1 - Indica natureza utilizada a cupom relacionado a NF-e | Pre Cadastro: | Obs Indica se a nateureza de operação pode ser referencada a cupom fiscal, conforme acima.
 Fixo Zero.
 
+-- VERSÃO 1 | LISTAGEM PADRÃO 
+
+SELECT
+    NATUR_OPERACAO, --integer
+    ESTADO_NATOPER, --text
+    DESCR_NAT_OPER, --text
+    EMITE_DUPLICATA, --integer
+    PERC_ICMS, --float
+    MENSAGEM, --text
+    COD_NATUREZA, --text
+    OPERACAO_FISCAL, --integer
+    CLASSIF_CONTABIL, --integer
+    CODIGO_TRANSACAO, --integer
+    COD_TRIB_ICMS, --integer
+    MENSAGEM_FRETE, --text
+    IPI_SOBRE_ICMS, --integer
+    TIPO_NATUREZA, --integer
+    PERC_ISS, --float
+    PERC_SUBSTITUICA, --float
+    PERC_REDUCAO_ICM, --float
+    LIVROS_FISCAIS, --integer
+    PERC_DIFERENC, --float
+    HIST_CONTABIL, --integer
+    PERC_IVA_1, --float
+    PERC_IVA_2, --float
+    CONSISTE_CVF_ICMS, --integer
+    DIVISAO_NATUR, --integer
+    PERC_ICMS_ISENTO, --float
+    FATURAMENTO, --integer
+    PERC_ICMS_DIFERIDO, --float
+    DOT, --text
+    GI, --text
+    MODELO_DOC_FISC, --integer
+    NAT_ATIVA, --integer
+    TIPO_CALC_SUB, --integer
+    PERC_REDU_SUB, --float
+    PERC_SUBS_INTERNA, --float
+    RESPEITA_IPI_CLASS_FISCAL, --integer
+    PERC_PIS, --float
+    PERC_COFINS, --float
+    NATU_NF_REF_CUPOM, --integer
+    SUBTRAI_ICMS_CUSTO, --integer
+    NAT_OPER_ENTREGA, --integer
+    DATA_CADASTRO, --datetime
+    TIPO_REDUCAO, --integer
+    GRAVA_OBS_NFS, --text
+    COD_NAT_RELACIONADA, --integer
+    IPI_SOBRE_SUBSTITUICAO, --integer
+    CONSIDERA_RATEIO, --integer
+    CVF_PIS, --integer
+    CVF_COFINS, --integer
+    CONSUMIDOR_FINAL, --text
+    COD_MENSAGEM, --integer
+    EXIGE_ENTRADA, --integer
+    RAZAO_SOCIAL_NATUREZA, --text
+    FLAG_RAZAO_SOCIAL, --integer
+    ANALISE_CREDITO_PEDIDO, --integer
+    EXIGE_COD_PRODUTO, --text
+    COD_CSOSN, --integer
+    TEM_MOV_FISICA, --integer
+    COD_CRED, --integer
+    IND_NF_SERVICO, --integer
+    COD_CONT_CREC, --integer
+    IND_NAT_FRT, --integer
+    IND_NF_CIAP, --integer
+    IND_BASE_ICMS_RESP_USU, --text
+    CONSIDERA_SUFRAMA, --text
+    NFE_ATU_FINANCEIRO, --text
+    CONSIDERA_CONTRIB, --text
+    NAT_UTILIZADA_CONTA_ORDEM, --text
+    ENVIA_SPED_PIS_COFINS, --integer
+    ORIGEM_MERCADORIA, --integer
+    REGRA_EXCECAO_SUFRAMA, --integer
+    NATUREZA_CONSIGNACAO, --text
+    PERMITE_NF_MESMO_CNPJ, --integer
+    PERC_FCP_UF_DEST, --float
+    PERC_ICMS_UF_DEST, --float
+    TIPO_BENEFICIO_FISCAL, --integer
+    DECLARA_DCIP, --integer
+    REGRA_NAT_EXCECAO, --integer
+    NATUREZA_INDUSTRIALIZACAO, --integer
+    REFERENTE_NF_CUPOM_FISCAL, --text
+    CODIGO_CAIXA, --integer
+    IND_NATUR_CUPOM_REF, --integer
+    IND_CFOP_EXPORTACAO, --text
+    COD_CATEGORIA, --integer
+    IND_BENEFICIO_ICMS, --text
+    PERMITE_ESTORNO_DIFAL, --text
+    COD_MENSAGEM_COMERCIAL, --integer
+    ENTRA_GIA, --integer
+    EXIGE_CENTRO_DE_CUSTO, --integer
+    NAT_OPER_RET_INDUS, --integer
+    IND_DESCONTO_FCI, --text
+    CONF_ALMOX_IMP_XML, --integer
+    RED_ICMS_BASE_PIS_COF, --integer
+FROM
+    pedi_080 
 
 
+-- VERSÃO 2 | LISTAGEM PADRÃO
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+SELECT
+    NATUR_OPERACAO,
+    ESTADO_NATOPER,
+    DESCR_NAT_OPER,
+    EMITE_DUPLICATA,
+    PERC_ICMS,
+    MENSAGEM,
+    COD_NATUREZA,
+    OPERACAO_FISCAL,
+    CLASSIF_CONTABIL,
+    CODIGO_TRANSACAO,
+    COD_TRIB_ICMS,
+    MENSAGEM_FRETE,
+    IPI_SOBRE_ICMS,
+    TIPO_NATUREZA,
+    PERC_ISS,
+    PERC_SUBSTITUICA,
+    PERC_REDUCAO_ICM,
+    LIVROS_FISCAIS,
+    PERC_DIFERENC,
+    HIST_CONTABIL,
+    PERC_IVA_1,
+    PERC_IVA_2,
+    CONSISTE_CVF_ICMS,
+    DIVISAO_NATUR,
+    PERC_ICMS_ISENTO,
+    FATURAMENTO,
+    PERC_ICMS_DIFERIDO,
+    DOT,
+    GI,
+    MODELO_DOC_FISC,
+    NAT_ATIVA,
+    TIPO_CALC_SUB,
+    PERC_REDU_SUB,
+    PERC_SUBS_INTERNA,
+    RESPEITA_IPI_CLASS_FISCAL,
+    PERC_PIS,
+    PERC_COFINS,
+    NATU_NF_REF_CUPOM,
+    SUBTRAI_ICMS_CUSTO,
+    NAT_OPER_ENTREGA,
+    DATA_CADASTRO,-
+    TIPO_REDUCAO,
+    GRAVA_OBS_NFS,
+    COD_NAT_RELACIONADA,
+    IPI_SOBRE_SUBSTITUICAO,
+    CONSIDERA_RATEIO,
+    CVF_PIS,
+    CVF_COFINS,
+    CONSUMIDOR_FINAL,
+    COD_MENSAGEM,
+    EXIGE_ENTRADA,
+    RAZAO_SOCIAL_NATUREZA,
+    FLAG_RAZAO_SOCIAL,
+    ANALISE_CREDITO_PEDIDO,
+    EXIGE_COD_PRODUTO,
+    COD_CSOSN,
+    TEM_MOV_FISICA,
+    COD_CRED,
+    IND_NF_SERVICO,
+    COD_CONT_CREC,
+    IND_NAT_FRT,
+    IND_NF_CIAP,
+    IND_BASE_ICMS_RESP_USU,
+    CONSIDERA_SUFRAMA,
+    NFE_ATU_FINANCEIRO,
+    CONSIDERA_CONTRIB,
+    NAT_UTILIZADA_CONTA_ORDEM,
+    ENVIA_SPED_PIS_COFINS,
+    ORIGEM_MERCADORIA,
+    REGRA_EXCECAO_SUFRAMA,
+    NATUREZA_CONSIGNACAO,
+    PERMITE_NF_MESMO_CNPJ,
+    PERC_FCP_UF_DEST,
+    PERC_ICMS_UF_DEST,
+    TIPO_BENEFICIO_FISCAL,
+    DECLARA_DCIP,
+    REGRA_NAT_EXCECAO,
+    NATUREZA_INDUSTRIALIZACAO,
+    REFERENTE_NF_CUPOM_FISCAL,
+    CODIGO_CAIXA,
+    IND_NATUR_CUPOM_REF,
+    IND_CFOP_EXPORTACAO,
+    COD_CATEGORIA,
+    IND_BENEFICIO_ICMS,
+    PERMITE_ESTORNO_DIFAL,
+    COD_MENSAGEM_COMERCIAL,
+    ENTRA_GIA,
+    EXIGE_CENTRO_DE_CUSTO,
+    NAT_OPER_RET_INDUS,
+    IND_DESCONTO_FCI,
+    CONF_ALMOX_IMP_XML,
+    RED_ICMS_BASE_PIS_COF
+FROM
+    pedi_080 
