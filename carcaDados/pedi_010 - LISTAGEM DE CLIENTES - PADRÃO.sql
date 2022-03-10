@@ -11,14 +11,14 @@ SELECT
 		ELSE 1
 	END	AS SITUACAO_CLIENTE,
 	CASE  
-		WHEN (LEN(REPLACE(REPLACE(CP.Fone1_Cliente,'-',''),' ','')) <= 8) THEN REPLACE(REPLACE(CP.Fone1_Cliente,'-',''),' ','')
+		WHEN (LEN(REPLACE(REPLACE(REPLACE(CP.Fone1_Cliente,'.',''),'-',''),' ','')) <= 8) THEN REPLACE(REPLACE(REPLACE(CP.Fone1_Cliente,'.',''),'-',''),' ','')
 	END AS TELEFONE_CLIENTE,
 	CASE  
 		WHEN (LEN(REPLACE(REPLACE(CP.Fone2_Cliente,'-',''),' ','')) <= 8) THEN REPLACE(REPLACE(CP.Fone2_Cliente,'-',''),' ','')
 	END AS TELEX_CLIENTE,
-	SUBSTRING(REPLACE(REPLACE(CP.Fone_Fax_Cliente,'-',''),' ',''),1,8) AS FAX_CLIENTE,
+	SUBSTRING(REPLACE(REPLACE(REPLACE(CP.Fone_Fax_Cliente,'.',''),'-',''),' ',''),1,8) AS FAX_CLIENTE,
 	CASE  
-		WHEN (LEN(REPLACE(REPLACE(CP.Fone1_Cliente,'-',''),' ','')) = 9) THEN REPLACE(REPLACE(CP.Fone1_Cliente,'-',''),' ','')
+		WHEN (LEN(REPLACE(REPLACE(REPLACE(CP.Fone1_Cliente,'.',''),'-',''),' ','')) = 9) THEN REPLACE(REPLACE(REPLACE(CP.Fone1_Cliente,'.',''),'-',''),' ','')
 	END AS CELULAR_CLIENTE,
 	SUBSTRING(CP.Endereco_Cliente,1,60) AS ENDERECO_CLIENTE,
 	REPLACE(REPLACE(REPLACE(CP.Cep_Cliente,'.',''),'/',''),'-','') AS CEP_CLIENTE,
@@ -118,7 +118,9 @@ WHERE
 	CP.Tipo_Entidade IN ('C','A','F') AND
 	CP.CGC_Cliente IS NOT NULL AND
 	SUBSTRING(REPLACE(REPLACE(REPLACE(CP.CGC_Cliente,'.',''),'/',''),'-',''),1,8) <> '00000000' AND
-	CP.Fundacao_ou_Nascimento > '2010-01-01'
+	CP.Data_Cadastro_Cliente > '2015-01-01'
+ORDER BY
+	CP.Razao_Nome_Cliente
 
 -- DEV: TIAGO DE ABREU | DATE: 16/02/2022 | MESSAGE: CARGA DE DADOS REALIZADA COM SUCESSO
 
@@ -382,7 +384,8 @@ FROM
 	pedi_010
 
 -- VERSÃO 2 | LISTAGEM DE CLIENTES - PADRÃO
-CGC_9,
+SELECT
+	CGC_9,
 	CGC_4,
 	CGC_2,
 	NOME_CLIENTE, 
