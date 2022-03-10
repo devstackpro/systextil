@@ -65,11 +65,11 @@ SELECT
 	END AS INSCR_EST_FORNE, 
     '' AS CX_POSTAL_FORNE, 
     CASE  
-		WHEN (LEN(REPLACE(REPLACE(CP.Fone1_Cliente,'-',''),' ','')) <= 8) THEN REPLACE(REPLACE(CP.Fone1_Cliente,'-',''),' ','')
+		WHEN (LEN(REPLACE(REPLACE(REPLACE(CP.Fone1_Cliente,'.',''),'-',''),' ','')) <= 8) THEN REPLACE(REPLACE(REPLACE(CP.Fone1_Cliente,'.',''),'-',''),' ','')
 	END AS TELEFONE_FORNE, 
-    SUBSTRING(REPLACE(REPLACE(CP.Fone_Fax_Cliente,'-',''),' ',''),1,8) AS FAX_FORNECEDORE, 
+    SUBSTRING(REPLACE(REPLACE(REPLACE(CP.Fone_Fax_Cliente,'.',''),'-',''),' ',''),1,8) AS FAX_FORNECEDORE, 
     CASE  
-		WHEN (LEN(REPLACE(REPLACE(CP.Fone1_Cliente,'-',''),' ','')) = 9) THEN REPLACE(REPLACE(CP.Fone1_Cliente,'-',''),' ','')
+		WHEN (LEN(REPLACE(REPLACE(REPLACE(CP.Fone1_Cliente,'.',''),'-',''),' ','')) = 9) THEN REPLACE(REPLACE(REPLACE(CP.Fone1_Cliente,'.',''),'-',''),' ','')
 	END AS CELULAR_FORNECEDOR, 
     CASE  
 		WHEN (LEN(REPLACE(REPLACE(CP.Fone2_Cliente,'-',''),' ','')) <= 8) THEN REPLACE(REPLACE(CP.Fone2_Cliente,'-',''),' ','')
@@ -122,8 +122,10 @@ WHERE
 	CP.Tipo_Entidade IN ('C','A','F') AND
 	CP.CGC_Cliente IS NOT NULL AND
 	SUBSTRING(REPLACE(REPLACE(REPLACE(CP.CGC_Cliente,'.',''),'/',''),'-',''),1,8) <> '00000000' AND
-	CP.Fundacao_ou_Nascimento > '2010-01-01'
-
+	CP.Data_Cadastro_Cliente > '2015-01-01'
+ORDER BY
+	CP.Razao_Nome_Cliente
+  
 -- VERSÃO 1 | LISTAGEM PADRÃO 
 
 SELECT
