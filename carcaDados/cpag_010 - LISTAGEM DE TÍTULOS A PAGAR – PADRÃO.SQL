@@ -40,6 +40,48 @@ SELECT
     USUARIO_DIGITACAO, --type: VARCHAR2(15) | nullable: Y | Default: '' | comments: | Pre Cadastro:| Obs: Fixo "CARGA"
     CODIGO_BARRAS, --type: VARCHAR2(47) | nullable: Y | Default: '' | comments: | Pre Cadastro:| Obs: Código de barras do boleto bancário
 
+-- VERSÃO 2 | CARGA DE DADOS
+SELECT
+    AS NR_DUPLICATA, 
+    AS PARCELA, 
+    AS CGC_9, 
+    AS CGC_4, 
+    AS CGC_2, 
+    AS TIPO_TITULO, 
+    AS CODIGO_EMPRESA, 
+    AS DOCUMENTO, 
+    AS SERIE, 
+    AS SITUACAO, 
+    AS DATA_CONTRATO, 
+    AS DATA_VENCIMENTO, 
+    AS DATA_DIGITACAO, 
+    AS DATA_TRANSACAO, 
+    AS VALOR_PARCELA, 
+    AS SALDO_TITULO, 
+    AS TIPO_PAGAMENTO, 
+    AS COD_END_COBRANCA, 
+    AS COD_PORTADOR, 
+    AS PREVISAO, 
+    AS CODIGO_DEPTO, 
+    AS CODIGO_HISTORICO,
+    AS CODIGO_TRANSACAO,
+    AS EMITENTE_TITULO, 
+    AS ORIGEM_DEBITO, 
+    AS POSICAO_TITULO, 
+    AS VALOR_MOEDA, 
+    AS MOEDA_TITULO,
+    AS CODIGO_CONTABIL, 
+    AS COMPL_HISTORICO, 
+    AS NR_TITULO_BANCOO,
+    AS NUM_CONTABIL,
+    AS VALOR_ISS,
+    AS VALOR_IRRF,
+    AS VALOR_DESC,  
+    AS VALOR_JUROS, 
+    AS VALOR_INSS, 
+    AS USUARIO_DIGITACAO, 
+    AS CODIGO_BARRAS, 
+
 
 -- VERSÃO 1 | LISTAGEM PADRÃO 
 
