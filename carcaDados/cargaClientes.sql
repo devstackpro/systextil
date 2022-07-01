@@ -1,0 +1,111 @@
+-- SCRIPT PARA CARGA DE DADOS CLIENTES - MICRODATA --> SYSTEXTIL
+SELECT 
+	SUBSTRING(REPLACE(REPLACE(REPLACE(CP.CGC_Cliente,'.',''),'/',''),'-',''),1,8) AS CGC_9,
+	SUBSTRING(REPLACE(REPLACE(REPLACE(CP.CGC_Cliente,'.',''),'/',''),'-',''),9,4) AS CGC_4,
+	SUBSTRING(REPLACE(REPLACE(REPLACE(CP.CGC_Cliente,'.',''),'/',''),'-',''),13,2) AS CGC_2,
+	CP.Razao_Nome_Cliente AS NOME_CLIENTE,
+	CI.Nome_Fantasia AS FANTASIA_CLIENTE,
+	CASE CP.Inativo 
+		WHEN 'N' THEN 1
+		WHEN 'S' THEN 2
+		ELSE 1
+	END	AS SITUACAO_CLIENTE,
+	CASE  
+		WHEN (LEN(REPLACE(CP.Fone1_Cliente,'-','')) <= 8) THEN REPLACE(CP.Fone1_Cliente,'-','')
+	END AS TELEFONE_CLIENTE,
+	CASE  
+		WHEN (LEN(REPLACE(CP.Fone2_Cliente,'-','')) <= 8) THEN REPLACE(CP.Fone2_Cliente,'-','')
+	END AS TELEX_CLIENTE,
+	REPLACE(CP.Fone_Fax_Cliente,'-','') AS FAX_CLIENTE,
+	CASE  
+		WHEN (LEN(REPLACE(CP.Fone1_Cliente,'-','')) = 9) THEN REPLACE(CP.Fone1_Cliente,'-','')
+	END AS CELULAR_CLIENTE,
+	SUBSTRING(CP.Endereco_Cliente,1,60) AS ENDERECO_CLIENTE,
+	REPLACE(REPLACE(REPLACE(CP.Cep_Cliente,'.',''),'/',''),'-','') AS CEP_CLIENTE,
+	'' AS CXPOSTAL_CLIENTE,
+	CASE CP.RG_ou_Inscricao_Cliente 
+		WHEN '' THEN 'ISENTO'
+		ELSE ISNULL(REPLACE(REPLACE(REPLACE(CP.RG_ou_Inscricao_Cliente,'.',''),'/',''),'-',''),'ISENTO')
+	END	AS INSC_EST_CLIENTE,
+	CP.Banco_Cliente AS PORTADOR_CLIENTE,
+	FORMAT(CP.Data_Cadastro_Cliente, 'dd/MM/yyyy') AS DATA_CAD_CLIENTE,
+	'' AS DATA_EXC_CLIENTE,
+	0 AS MOT_EXC_CLIENTE,
+	CV.Vendedor AS CDREPRES_CLIENTE,
+	SUBSTRING(CP.Bairro_Cliente,1,20) AS BAIRRO,
+	CO.Email_Nfe AS NFE_E_MAIL,
+	CP.Numero_Cliente AS NUMERO_IMOVEL,
+	CP.Complemento_Cliente AS COMPLEMENTO,
+	--CP.Cidade_Cliente AS COD_CIDADE
+	'' AS COD_CIDADE,
+	0 AS SUB_REGIAO,
+	CASE CP.Cliente_Bloqueado 
+		WHEN 'N' THEN 1
+		WHEN 'S' THEN 2
+		ELSE 1
+	END	AS COD_SIT_CREDITO,
+	FORMAT(CP.Fundacao_ou_Nascimento, 'dd/MM/yyyy') AS DATA_FUNDACAO,
+	CP.Observacoes_Cliente AS OBSERVACAO,
+	CP.Ramo_Cliente AS COD_RAMO_ATIV, --SISTEMA NÃO POSSUI CÓDIGO DE RAMO DE ATIVIDADE
+	CASE CP.Conceito_Cliente 
+		WHEN 'A' THEN 10
+		WHEN 'B' THEN 09
+		WHEN 'C' THEN 08
+		WHEN 'D' THEN 07
+		WHEN 'E' THEN 06
+		WHEN 'F' THEN 05
+		WHEN 'G' THEN 04
+		WHEN 'H' THEN 03
+		WHEN 'I' THEN 02
+		WHEN 'J' THEN 01
+		WHEN 'K' THEN 00
+		ELSE 00
+	END	AS CONCEITO_CLIENTE,
+	'' AS TIPO_CLIENTE, -- ?
+	'' AS PORTE_CLIENTE, -- ?
+	'' AS SEGMENTO_MERCADO, -- ?
+	CASE  
+		WHEN (LEN(REPLACE(REPLACE(REPLACE(CP.Codigo_Cliente,'.',''),'/',''),'-','')) >= 13) THEN 2
+		ELSE 1
+	END AS FISICA_JURIDICA,
+	'' AS FAIXA_ETARIA, -- ?
+	0 AS CLIENTE_PECA,
+	0 AS LOCAL_COMPRA,
+	CASE CI.Suframa 
+		WHEN '' THEN ''
+		ELSE ISNULL(CI.Suframa,'')
+	END AS NR_SUFRAMA_CLI,
+	0 AS TRAN_CLI_FORNE9,
+	0 AS TRAN_CLI_FORNE4,
+	0 AS TRAN_CLI_FORNE2,
+	ISNULL(CONVERT(NUMERIC,FORMAT(CP.Limite_Credito_Cliente, '000000000')),0) AS LIMITE_MAX_PED1,
+	0 AS LIMITE_MAX_PED2,
+	0 AS LIMITE_MAX_PED4,
+	0 AS LIMITE_MAX_PED7,
+	2 AS UNIDADE_LIM_PED, -- 2 VALOR
+	'' AS CONTA_CONTABIL,
+	0 AS PRAZO_MEDIO,
+	0 AS FORMA_PAGAMENTO,
+	CP.EMail_Cliente AS E_MAIL,
+	CP.Cod_Fiscal_Cliente AS CODIGO_CONTABIL,
+	0 AS INSTRUCAO_INT,
+	0 AS DIAS_INSTR_1,
+	0 AS PERC_INSTR_1,
+	0 AS INSTRUCAO_INT_2,
+	0 AS DIAS_INSTR_2,
+	0 AS PERC_DESC_DUPLIC,
+	'' AS MENSAGEM_COBR,
+	REPLACE(REPLACE(REPLACE(CP.Codigo_Cliente,'.',''),'/',''),'-','') AS CODIGO_CLIENTE,
+	0.0 AS PERC_ENCARGOS,
+	0 AS SITUACAO_CADASTRO,
+	0 AS CRITERIO_ATENDIMENTO,
+	0 AS tipo_frete,
+	0 AS micro_empreendedor_indiv,
+	0 AS grupo_economico
+FROM 
+	DBMicrodata.dbo.CLIENTES_PRINCIPAL CP
+	INNER JOIN DBMicrodata.dbo.Clientes_Informacoes CI ON CI.Cliente = CP.Codigo_Cliente
+	LEFT JOIN DBMicrodata.dbo.Clientes_Vendedores CV ON CV.Codigo_Cliente_Vendedores = CP.Codigo_Cliente
+	LEFT JOIN DBMicrodata.dbo.Clientes_Outros CO ON CO.Codigo_Cliente_Outros = CP.Codigo_Cliente
+WHERE
+	CP.Tipo_Entidade IN ('C','A')
