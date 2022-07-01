@@ -1,6 +1,7 @@
---tabela de constas a receber systextil: fatu_070 e fatu_075
+--tabela de contas a receber systextil: fatu_070 
+--tabela de contas recebidas systextil: fatu_075 
 
-
+--vw base do sistema microdata
 SELECT 
 	Nota_Fiscal AS QtdeDoc,
     Valor AS ValorTotal,
@@ -9,13 +10,32 @@ FROM
 	DBMicrodata.dbo.VW_Rec_DuplicatasEmAberto
 WHERE
 	Empresa = '01';
+
+--trazendo todos os campos da vw base
+SELECT 
+	Empresa,
+	idDocumento,
+	CNPJ_CPF,
+	Cliente,
+	Nota_Fiscal,
+	Serie,
+	Desdobro,
+	Emissao,
+	Vencimento,
+	Banco,
+	Operacao,
+	Valor,
+FROM 
+	DBMicrodata.dbo.VW_Rec_DuplicatasEmAberto
+WHERE
+	Empresa = '01';
 	
 	
 SELECT 
 	'001' AS CODIGO_EMPRESA, 
-	DA.CNPJ_CPF CLI_DUP_CGC_CLI9, 
-	AS CLI_DUP_CGC_CLI4,
-	AS CLI_DUP_CGC_CLI2,
+	SUBSTRING(REPLACE(REPLACE(REPLACE(DA.CNPJ_CPF,'.',''),'/',''),'-',''),1,8) AS CLI_DUP_CGC_CLI9, 
+	SUBSTRING(REPLACE(REPLACE(REPLACE(DA.CNPJ_CPF,'.',''),'/',''),'-',''),9,4) AS CLI_DUP_CGC_CLI4,
+	SUBSTRING(REPLACE(REPLACE(REPLACE(DA.CNPJ_CPF,'.',''),'/',''),'-',''),13,2) AS CLI_DUP_CGC_CLI2,
 	AS TIPO_TITULO,
 	AS NUM_DUPLICATA,
 	AS SEQ_DUPLICATAS,
