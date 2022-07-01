@@ -40,6 +40,62 @@ SELECT np.Empresa_Parcelas Empresa, nr.idDocumento, nr.Cliente_NF CNPJ_CPF, cp.R
 		)
 	) > 0
 
+--refatorando vw
+SELECT
+	np.Empresa_Parcelas Empresa, 
+	nr.idDocumento, 
+	nr.Cliente_NF CNPJ_CPF, 
+	cp.Razao_Nome_Cliente Cliente,  
+	np.Documento_Parcelas Nota_Fiscal, 
+	np.Serie, 
+	np.Parcela_Parcelas Desdobro,     
+	nr.Emissao_NF Emissao, 
+	np.Vencimento_Parcelas Vencimento, 
+	Banco_Parcelas Banco,   
+	Operacao_Parcelas Operacao,     
+	(SUM(ISNULL(np.Valor_Parcelas, 0)) - (
+		SELECT 
+			isnull(SUM(IsNull(rb.Valor_Liquido, 0)), 0)    
+		FROM 
+			Rec_Baixas rb  
+		WHERE 
+			rb.Empresa = np.Empresa_Parcelas
+			AND rb.Documento = np.Documento_Parcelas 
+			AND rb.Parcela = np.Parcela_Parcelas 
+			AND rb.Serie=np.Serie
+		)
+	) AS Valor  
+FROM 
+	Notas_Fiscais_Rec nr  
+	INNER JOIN Notas_Fiscais_Parcelas np ON nr.Nr_Empresa_NF = np.Empresa_Parcelas 
+	AND nr.Nr_Documento_NF = np.Documento_Parcelas 
+	AND nr.Serie=np.Serie 
+	LEFT JOIN Clientes_Principal cp ON cp.Codigo_Cliente = nr.Cliente_NF  
+GROUP BY 
+	np.Empresa_Parcelas, 
+	nr.idDocumento, 
+	nr.Cliente_NF, 
+	cp.Razao_Nome_Cliente, 
+	np.Documento_Parcelas, 
+	np.Parcela_Parcelas, 
+	np.serie, nr.Emissao_NF,  
+	np.Vencimento_Parcelas, 
+	Banco_Parcelas, 
+	Operacao_Parcelas  
+HAVING 
+	(SUM(ISNULL(np.Valor_Parcelas, 0)) - (
+		SELECT 
+			isnull(SUM(IsNull(rb.Valor_Liquido, 0)), 0)  
+		FROM 
+			Rec_Baixas rb  
+		WHERE 
+			rb.Empresa = np.Empresa_Parcelas AND  
+			rb.Documento = np.Documento_Parcelas AND  
+			rb.Parcela = np.Parcela_Parcelas and rb.Serie=np.Serie
+		)
+	) > 0
+
+
 --vw base do sistema microdata
 SELECT 
 	Nota_Fiscal AS QtdeDoc,
